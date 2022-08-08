@@ -26,7 +26,7 @@ class PostsController extends Controller
     public function sharePosts()
     {
         $shareButtons = \Share::page(
-            'https://onlinewebtutorblog.com/',
+            'pringgaseladedeng.my.id',
             'What you are writing, just share to world to learn!!',
         )
             ->facebook()

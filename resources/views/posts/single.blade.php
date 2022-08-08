@@ -11,8 +11,9 @@
 <div class="container">
     <div id="social-links">
         <p class="h3">Social Share</p>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://pringgaseladedeng.com" class="social-btn-sp " id=""><span class="fa fa-facebook-official"></span></a>
-            <a href="https://twitter.com/intent/tweet?text=my share text&amp;url=http://pringgaseladedeng.com" class="social-btn-sp" id=""><span class="fa fa-twitter"></span></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://pringgaseladedeng.my.id" class="social-btn-sp " id=""><span class="fa fa-facebook-official"></span></a>
+            <a href="https://twitter.com/intent/tweet?text=my share text&amp;url=http://pringgaseladedeng.my.id" class="social-btn-sp" id=""><span class="fa fa-twitter"></span></a>
+            {{-- <a href="https://www.linkedin.com/shareArticle?mini=true&url=[URL]&title=[TITLE]" class="social-btn-sp" id=""><span class="fa fa-linkedin"></span></a> --}}
     </div>
 </div>
 

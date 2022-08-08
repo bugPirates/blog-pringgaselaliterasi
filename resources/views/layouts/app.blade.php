@@ -21,7 +21,25 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.9.6/tailwind.min.css">
     <link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css" />
-
+      <!--- jquery search -->
+      <script>
+      function showResult(str) {
+        if (str.length==0) {
+         document.getElementById("livesearch").innerHTML="";
+         document.getElementById("livesearch").style.border="0px";
+        return;
+              }
+        var xmlhttp=new XMLHttpRequest();
+        xmlhttp.onreadystatechange=function() {
+          if (this.readyState==4 && this.status==200) {
+            document.getElementById("livesearch").innerHTML=this.responseText;
+            document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+          }
+        }
+  xmlhttp.open("GET","livesearch.php?q="+str,true);
+  xmlhttp.send();
+}
+</script>
     <!--script -->
     <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="{{ asset('js/share.js') }}"></script>
@@ -39,5 +57,23 @@
     <div class="container">
     <x-footer></x-footer>
     </div>
+
+<script type="text/javascript">
+$('#search').on('keyup',function(){
+$value=$(this).val();
+$.ajax({
+type : 'get',
+url : '{{URL::to('search')}}',
+data:{'search':$value},
+success:function(data){
+$('tbody').html(data);
+}
+});
+})
+</script>
+<script type="text/javascript">
+$.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+</script>
 </body>
+
 </html>
